@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Planilha de Preço da Confeiteira</title>
 <meta name="description" content="A planilha que soma ingredientes, gás, luz, embalagem e a sua hora e mostra o preço certo de cada encomenda. Funciona no celular.">
+<!-- Pixel da Meta: UTÍLIK | PXL01. O checkout da Cakto dispara InitiateCheckout e Purchase com o mesmo pixel. -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1137920485662966');
+fbq('track','PageView');
+fbq('track','ViewContent',{content_name:'Planilha de Preço da Confeiteira',value:37,currency:'BRL'});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1137920485662966&ev=PageView&noscript=1" alt=""></noscript>
 <style>
 :root{--marrom:#3b2314;--marrom2:#6b4128;--amarelo:#f7c948;--creme:#fbf3e6;--creme2:#f3e4cc;--vermelho:#e53935;--texto:#2a1a10;--cinza:#7a6656}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -265,6 +277,18 @@ footer{background:#2a1a10;color:#b9a08a;font-size:14px;padding:28px 0;text-align
 </footer>
 
 <div class="barra"><span>Planilha de Preço da Confeiteira · R$ 37</span><a class="btn" href="#comprar" data-cta="barra">Quero</a></div>
+
+<script>
+// Repassa as UTMs e o fbclid do anúncio para o checkout da Cakto, para a venda ficar ligada ao criativo.
+(function(){
+ var q=new URLSearchParams(location.search),out=new URLSearchParams();
+ q.forEach(function(v,k){if(/^utm_|^fbclid$|^src$/.test(k))out.set(k,v)});
+ var s=out.toString();if(!s)return;
+ document.querySelectorAll('a[href^="https://pay.cakto.com.br/"]').forEach(function(a){
+  a.href+= (a.href.indexOf('?')<0?'?':'&')+s;
+ });
+})();
+</script>
 
 </body>
 </html>
